@@ -34,3 +34,32 @@ puts my_car.name
 puts my_car.model
 puts my_car.year
 puts my_car.start_engine
+
+#shorthand of writing this:
+#While this is shorter, it does not allow us to change the values later on
+class Vehicle
+    attr_reader :name, :model, :year
+  
+    def initialize(name, model, year)
+      @name = name
+      @model = model
+      @year = year
+    end
+  end
+  
+  class Car < Vehicle
+    def start_engine
+      puts "Vroom Vroom Vroom"
+    end
+  
+    def stop_engine
+      puts "Engine stopped"
+    end
+  end
+  
+  my_car = Car.new("Baby Girl", "Toyota Note", 2020)
+  puts my_car.name
+  puts my_car.model
+  puts my_car.year
+  my_car.start_engine
+  
